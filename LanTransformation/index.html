@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LANTransformation  |  We are team of Hutlers!</title>
+  <meta name="description" content="The solution of technology">
+  <meta name="keywords" content="LANTransformation">
+
+  <!-- Favicons -->
+  <link href="assets/img/LT_LOGO-removebg-preview.png" rel="LAN_icon">
+  <link href="assets/img/LT_LOGO-removebg-preview.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background: #fff;
+        color: #333;
+    }
+
+    .projects-section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .projects-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    /* Project Card */
+    .project-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        opacity: 0; /* Start hidden for fade-in animation */
+        transform: translateY(40px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Zoom-in effect on hover (desktop only) */
+    @media (hover: hover) {
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+    }
+
+    /* Fade-in animation class */
+    .fade-in {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Image */
+    .project-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    /* Content */
+    .project-content {
+        padding: 20px;
+        flex: 1;
+    }
+    .project-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #222;
+    }
+    .project-content p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    /* Button */
+    .project-btn {
+        background: black;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 18px;
+        border: solid orange;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+        display: inline-block;
+    }
+    .project-btn:hover {
+        background: black;
+    }
+    
+
+    /* Mobile improvements */
+    @media (max-width: 480px) {
+        .projects-section {
+            padding: 30px 15px;
+        }
+        .projects-section h2 {
+            font-size: 1.8rem;
+        }
+        .project-content h3 {
+            font-size: 1.1rem;
+        }
+        .project-content p {
+            font-size: 0.9rem;
+        }
+    }
+
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background: #f8f9fa;
+        color: #333;
+    }
+
+    .testimonial-section {
+        max-width: 900px;
+        margin: auto;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .testimonial-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        color: #222;
+    }
+
+    .testimonial-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .testimonial-slide {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .testimonial-card {
+        min-width: 100%;
+        box-sizing: border-box;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid orange;
+        flex-shrink: 0;
+    }
+
+    .testimonial-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #555;
+        max-width: 700px;
+    }
+
+    .testimonial-card h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #222;
+        font-weight: 600;
+    }
+
+    /* Dots navigation */
+    .dots {
+        margin-top: 20px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .active-dot {
+        background-color: orangered;
+    }
+
+    /* Tablet adjustments */
+    @media (max-width: 768px) {
+        .testimonial-section {
+            padding: 40px 15px;
+        }
+        .testimonial-section h2 {
+            font-size: 1.9rem;
+        }
+        .testimonial-card p {
+            font-size: 1rem;
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 500px) {
+        .testimonial-section {
+            padding: 30px 10px;
+        }
+        .testimonial-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        .testimonial-card {
+            padding: 20px;
+        }
+        .testimonial-card img {
+            width: 70px;
+            height: 70px;
+        }
+        .testimonial-card p {
+            font-size: 0.95rem;
+        }
+        .testimonial-card h4 {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+         <!-- <img src="assets/img/LT" alt="" srcset=""> -->
+        <h1 class="sitename"><img src="assets/img/LT_LOGO-removebg-preview.png" alt="" width="80" height="230"></h1>
+        <!-- <span>.</span> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+         
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/mac.jpg" alt="" data-aos="fade-in">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <h2>Welcome to <span>LANTransformation </span></h2>
+            <p>We are a team of three passionate learners and developers who believe in growing while helping others grow.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/lan3.PNG"  class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Who We Are? </h3>
+            <p class="fst-italic">
+              
+We are LANTransformation — a team of three passionate learners, developers, and visionaries who believe in the power of growth through collaboration. Our journey began with a shared mission: to learn continuously, build meaningful digital solutions, and empower others along the way.
+
+We specialize in designing and developing websites that make it easier for individuals and businesses to connect, work, and grow online. For us, every line of code is not just a solution — it’s a step toward transformation.
+
+At LANTransformation, we don’t just build websites — we build relationships, ideas, and opportunities. We are committed to creating tools and platforms that inspire learning, creativity, and digital success.
+
+              </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="unmute.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/lan3.PNG" alt=""></div>
+          <div class="col-lg-6">
+
+            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-archive flex-shrink-0"></i>
+              <div>
+                <h2></h2>
+                <h4>OUR MISSION</h4>
+                <p>We believe every project is more than just code — it’s 
+                  a partnership. That’s why we work hand-in-hand with individuals,
+                   businesses, and communities to design and develop special
+                    digital platforms that fit their unique goals.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-basket flex-shrink-0"></i>
+              <div>
+                <h4>OUR VISION</h4>
+                <p>Our vision is to be a trusted partner for digital growth, 
+                  where collaboration with our clients leads to platforms
+                   that inspire creativity, improve connections, and 
+                   open new opportunities. We don’t just build websites 
+                   — we build relationships, ideas, and lasting success stories.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-broadcast flex-shrink-0"></i>
+              <div>
+                <h4>OUR GOAL</h4>
+                <p>Our goal is to create powerful and user-friendly digital platforms that help our clients connect,
+                   grow, and succeed online. We aim to turn every idea into a practical solution by working 
+                   closely with our clients, combining creativity, learning, and technology to achieve real transformation.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <!-- End Features Item-->
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Check our Services</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                💻
+                <!-- <img src="assets/img/sod.png" alt="" style="height: 35px; width: 35px;"> -->
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>WEBSITE DEVELOPEMENT</h3>
+              </a>
+              <p><ul><li>	Helping others create simple personal websites using HTML, CSS, and JavaScript</li>
+<li>	Teaching how to use free tools like GitHub Pages or Netlify to host their sites</li>
+<li>	Helping churches, schools, or small businesses build landing pages</li>
+</ul></p>
+            </div>
+          </div><!-- End Service Item -->
+
+     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                🎨
+                <!-- <img src="assets/img/gra.png" alt="" style="height: 35px; width: 35px;"> -->
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3> GRAPHICS DESIGNING</h3>
+              </a>
+              <p><ul>
+                <li>	Designing basic logos, banners, or posters using Canva or Figma</li>
+                <li>	Helping young entrepreneurs create simple brand identity kits</li>
+             
+              </ul></p>
+              <a href="service-details.html" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                📚
+                <!-- <img src="assets/img/gra.png" alt="" style="height: 35px; width: 35px;"> -->
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3> UX / UI DESIGNING</h3>
+              </a>
+              <p><ul>
+                <li>	Recommending YouTube channels, free courses, and websites that helped you</li>
+                <li>	Creating a mini blog or Notion board where you share what you learn</li>
+             
+              </ul></p>
+              <a href="service-details.html" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+
+
+        
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+<section id="projects" class="projects-section">
+  <div class="container section-title" data-aos="fade-up">
+        <h2></h2>
+        <p>What We've Been Building</p>
+        <h4>Here are some of our ongoing and completed projects:</h4>
+      </div>
+  
+    <div class="projects-grid">
+        <div class="project-card">
+           
+              <div class="project-card">
+            <div class="project-image">
+                <img src="assets/img/Azbeta2.png" alt="Project 4">
+            </div>
+            <div class="project-content">
+                <h3>AzBeta </h3>
+                <p>At WordPortal, we believe that the Word of God is living, powerful, and meant to be shared every day. Our mission is to help people connect with God’s truth and find inspiration through daily scripture,
+                   uplifting messages, and encouraging teachings.</p>
+                <a href="https://azbeta.netlify.app/" target="_blank" class="project-btn">Visit Project</a>
+                <a href="assets/img/wordportal.PNG" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            </div>
+        </div>
+          <div class="project-card">
+            <div class="project-image">
+                <img src="assets/img/hinga.PNG" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>HINGA</h3>
+                <p>At HINGA, we believe that agriculture is the heartbeat of our communities. Our mission is to empower farmers, gardeners, and agricultural entrepreneurs with the right information,
+                   tools, and support they need to grow more, waste less, and thrive in every season.We provide accurate climate season updates so you can plant, harvest, and plan at the perfect time. Our expert tips and advice cover modern farming techniques, soil care, crop selection, and pest management — all tailored to your region.</p>
+                <a href="https://hingapro.vercel.app/" target="_blank" class="project-btn">Visit Project</a>
+                <a href="assets/img/hinga.PNG" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            </div>
+        </div>
+            <div class="project-content">
+               <div class="project-image">
+                <img src="assets/img/opencare.PNG" alt="Project 2">
+            </div>
+                <h3>OPEN CARE</h3>
+                <p>OpenCare is a digital health initiative designed to help people living in remote or 
+                  underserved areas access basic medical services without needing to travel long
+                   distances to a clinic or hospital. The platform provides a user-friendly solution
+                    to connect patients with healthcare support from anywhere.</p>
+                <a href="#" class="project-btn">Visit Project</a>
+                <a href="assets/img/opem.PNG" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+            </div>
+             <div class="project-content">
+               <div class="project-image">
+                <img src="assets/img/baho.png" alt="Project 2">
+            </div>
+                <h3>BAHO TECH</h3>
+                <p>BAHO is a social innovation project created to support individuals living with hearing, visual, or speech disabilities. Our mission is to break down communication barriers and help them feel seen, heard, and valued—just like everyone else.BAHO believes that disability does not mean disconnection. 
+                  Through technology, awareness, and community, we bring people closer.</p>
+                <a href="#" class="project-btn">Visit Project</a>
+                <a href="assets/img/baho.png" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+            </div>
+            <div class="project-content">
+               <div class="project-image">
+                <img src="assets/img/sod.png" alt="Project 2">
+            </div>
+                <h3>ANTI-D</h3>
+                <p>Anti-D is a mental health initiative that aims to create a safe space, supportive tools, and accessible care for people battling depression. Our mission is to reduce stigma, provide early support, 
+                  and bring mental wellness to everyone—especially in communities where mental health is ignored or misunderstood..</p>
+                <a href="#" class="project-btn">Visit Project</a>
+                <a href="assets/img/sod.png" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+            </div><div class="project-content">
+               <div class="project-image">
+                <img src="assets/img/baho.png" alt="Project 2">
+            </div>
+                <h3>RW CHAT</h3>
+                <p></p>
+                <a href="#" class="project-btn">Visit Project</a>
+                <a href="assets/img/tech mentorship.png" target="_blank" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+            </div>
+        </div>
+      
+    </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<script>
+    // Fade-in animation on load
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".project-card");
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add("fade-in");
+            }, index * 150); // Stagger animation
+        });
+    });
+</script>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center justify-content-between">
+
+          <div class="col-lg-5">
+            <img src="assets/img/lan3.PNG" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-6">
+
+            <h3 class="fw-bold fs-2 mb-3">LAN OBJECTIVES</h3>
+            <p>
+          At LANTransformation, our objectives are centered on what we have already achieved and
+           what we continue to build upon. We focus on delivering quality websites and digital
+            platforms that are simple, powerful, and user-friendly. Through close collaboration 
+            with our clients, we ensure every solution reflects their unique vision and needs.
+             Our journey has also been about continuous learning and growth, not only within our 
+             team but also by empowering our clients with the right tools to succeed. Beyond creating 
+             digital solutions, our objective is to strengthen online presence, inspire creativity,
+              and build lasting relationships that go beyond projects — relationships that lead to trust,
+               transformation, and long-term success.
+            </p>
+
+            <div class="row gy-4">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+    <script>
+        const slide = document.getElementById('testimonialSlide');
+    const dots = document.querySelectorAll('.dot');
+    let index = 0;
+    const totalSlides = dots.length;
+
+    function showSlide(i) {
+        index = i;
+        slide.style.transform = `translateX(-${i * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active-dot'));
+        dots[i].classList.add('active-dot');
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    }, 5000);
+
+    // Dot click navigation
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+        });
+    });
+    </script>
+    
+    <section>
+
+
+
+
+
+    </section>
+    <!-- Testimonials Section -->
+    <section id="sponsors" class="testimonials section dark-background">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <!-- <h3 class="partners-details">LAN SPONSORS</h3> -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 2000,
+              "autoplay": {
+                "delay": 2000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <!-- <section id="sponsors" class="sponsor section"> -->
+          <div class="swiper-wrapper">
+
+            <!-- <h4>LAN SPONSORS</h4> -->
+
+                  <div class="swiper-slide">
+              <h4><img src="assets/img/LT_LOGO-removebg-preview.png" alt="" width="80" height="80">SPONSORS</h4>
+              <div class="testimonial-item">
+                <img src="assets/img/withintechlogo.png" class="testimonial-img" alt="">
+                <h3>WithinTech</h3>
+                <h4>Empowering the next generation of innovators with comprehensive tech education, fostering excellence, and enriching communities through sharing computer literacy and programming sessions</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Empowering the next generation of innovators with comprehensive tech education, fostering excellence, and enriching communities through sharing computer literacy and programming sessions.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <h4><img src="assets/img/LT_LOGO-removebg-preview.png" alt="" width="80" height="80">SPONSORS</h4>
+              <div class="testimonial-item">
+                <img src="assets/img/ikambacreativelogo.jpeg" class="testimonial-img" alt="">
+                <h3>iKAMBA Empire</h3>
+                <h4>iKAMBA Empire, Digital contents , Brightly future</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Ikamba Empire, Digital contents , Brightly future.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <h4><img src="assets/img/LT_LOGO-removebg-preview.png" alt="" width="80" height="80">SPONSORS</h4>
+              <div class="testimonial-item">
+                <img src="assets/img/umuravalogo.png" class="testimonial-img" alt="">
+                <h3>UMURAVA</h3>
+                <h4>A Custom Talent Marketplace and Workforce <br> Outsourcing Platform, Powered by AI</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>A Custom Talent Marketplace and Workforce Outsourcing Platform, Powered by AI.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item  -->
+
+      
+            
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    </section>
+
+       <section id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+
+      </div>
+      
+
+      <div class="container" style="margin-left: 20%;">
+
+        <div class="row gy-4">
+
+         <!-- End Team Member -->
+<div class="container section-title" data-aos="fade-up" style="align-items: center;margin-left: 25%;font-size: 10px;">
+        <!-- <h2>LAN Team</h2> -->
+        <p>MEET THE TEAM</p>
+      </div><!-- End Section Title -->
+          <div class="col-lg-3 col-md-6 d-flex justify-content-around" data-aos="fade-up" data-aos-delay="500">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/Loic.png" class="img-fluid" width="265">
+                <div class="social">
+                   <a href="" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/aime_loic_132/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/aimeloic/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Loic Aime</h4>
+                <span>Backend Developer | Python Programmer | Cybersecurity Learner (HTB & CISCO)</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex justify-content-around" data-aos="fade-up" data-aos-delay="500">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/azeem.jpg" class="img-fluid" width="265">
+                <div class="social">
+                  <a href="https://github.com/azeem-mpano" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/azeem.mpano/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/azeem-mpano-55a238344/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Azeem Mpano</h4>
+                <span>Software Developer | Machine Learning & AI Enthusiast | Entrepreneurial Thinker</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 d-flex justify-content-around" data-aos="fade-up" data-aos-delay="500">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/Nancy.jpeg" class="img-fluid" width="265">
+                <div class="social">
+                  <a href="" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.instagram.com/carment931/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/nancy-teta-kwizera-43a49432b/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Nancy Teta</h4>
+                <span>Software Developer | UI/UX Designer | Creative Frontend Thinker</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+        </div>
+
+      </div>
+ 
+
+    </section>
+
+
+
+     <!-- <section>
+
+
+     LAN PARTNERS STUDENTS
+
+
+     </section> -->
+
+
+
+
+
+
+
+    </section><!-- /Team Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2></h2>
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>Kigali Nyarugenge</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+250 795 660 611</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>lantransformation@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="First Name" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Last Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <a href="lantransformation@gmail.com"><button type="submit">Send Message</button></a>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">LANTransformation</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>KIGALI, Rwanda</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+250 795 660 611</span></p>
+              <p><strong>Email:</strong> <span>lantransformation@gmail.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <!-- <a href="#"><i class="bi bi-twitter-x"></i></a> -->
+              <!-- <a href="https://www.facebook.com/people/LANTransformation/61558426440872/"><i class="bi bi-facebook"></i></a> -->
+              <!-- <a href="https://www.instagram.com/LANTransformation/"><i class="bi bi-instagram"></i></a> -->
+              <!-- <a href="https://www.linkedin.com/company/LANTransformation/"><i class="bi bi-linkedin"></i></a> -->
+              <!-- <a href="https://linktr.ee/LANTransformation"><i class="bi bi-tree"></i></a> -->
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href=""> Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about"> About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services"> Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#portfolio"> Projects</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#sponsors"> Sponsors</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#team"> Team</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#contact"> Contact</a></li>
+
+
+
+            </ul>
+          </div>
+ 
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services"> Software Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services"> Graphic Design</a></li>
+              
+            </ul>
+          </div>
+
+          <!-- <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Our Contents</h4>
+            <p>Visit us on all our social media Platform @LANTransformation</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container text-center">
+         <h4> <span></span> <strong class="px-1 sitename">	“Learn. Act. Network. Transform.”</strong> </h4>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">LAN</strong> <span>All Rights Reserved</span></p>
+        <!-- <div class="credits">
+
+          Designed by <a href="https://linktr.ee/LANTransformation">LANTransformation</a>
+        </div> -->
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+<!--   <div id="preloader"></div> -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
